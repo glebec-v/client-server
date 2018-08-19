@@ -1,0 +1,51 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "55ee0f576dc6a0c4049d65dc1d656826",
+    "packages": [
+        {
+            "name": "glebec-v/brackets-counter",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/glebec-v/brackets-counter.git",
+                "reference": "f8d227f31813b7d6b472362df2b46b98baf08049"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/glebec-v/brackets-counter/zipball/f8d227f31813b7d6b472362df2b46b98baf08049",
+                "reference": "f8d227f31813b7d6b472362df2b46b98baf08049",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GlebecV\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "glebec-v",
+                    "email": "gvorotilov@gmail.com"
+                }
+            ],
+            "description": "lightweight open-close brackets validator",
+            "time": "2018-08-04T21:55:48+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

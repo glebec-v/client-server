@@ -1,0 +1,17 @@
+{
+  "name": "glebec-v/cs-brackets-checker",
+  "description": "simple lightweight client-server brackets validator",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Gleb Vorotilov",
+      "email": "gvorotilov@gmail.com"
+    }
+  ],
+  "require": {
+    "glebec-v/brackets-counter": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {"GlebecV\\": "src/"}
+  }
+}
