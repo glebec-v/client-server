@@ -1,31 +1,19 @@
 #!/usr/bin/env php
 <?php
 
+require __DIR__. '/vendor/autoload.php';
+
 $params = getopt('', ['address::', 'port::', 'message:']);
-$address = $params['address'] ?? '127.0.0.1';
-$port    = $params['port']    ?? 9999;
-// $message = $params['message'] ?? "GET /\n";
+$message = $params['message'] ?? '()';
+unset($params['message']);
 
-while (true) {
-    $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
-    if (false === $socket) {
-        die("Socket create failed: ".socket_strerror(socket_last_error()).PHP_EOL);
-    }
+echo 'message:'.$message.PHP_EOL;
 
-    usleep(100000);
+$client = new \GlebecV\Network\Client(null, $params);
 
-    $message = (string)mt_rand(10000, 99999).PHP_EOL;
-
-    if (false === socket_connect($socket, $address, $port)) {
-        die("Socket connect failed: ".socket_strerror(socket_last_error()).PHP_EOL);
-    }
-    socket_write($socket, $message, strlen($message));
-
-    $response = '';
-    while ('' !== ($chunk = socket_read($socket, 2048))) {
-        $response .= $chunk;
-    }
-    echo $response.PHP_EOL;
-
-    socket_close($socket);
+try {
+    echo $client->send($message);
+} catch (\Exception $exception) {
+    $error = $exception->getMessage().PHP_EOL.$exception->getTraceAsString();
+    echo "Socket connection error: {$error}".PHP_EOL;
 }
